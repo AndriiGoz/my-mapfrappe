@@ -32,8 +32,8 @@ def main():
     with col5:
         diameter = st.slider('Set diameter, km', 0, 50, 0, 1)
 
-    [lon_l, lat_l] = [round(float(x.strip()), 6) for x in coord_left.split(',')]
-    [lon_r, lat_r] = [round(float(x.strip()), 6) for x in coord_right.split(',')]
+    [lat_l, lon_l] = [round(float(x.strip()), 6) for x in coord_left.split(',')]
+    [lat_r, lon_r] = [round(float(x.strip()), 6) for x in coord_right.split(',')]
 
     col6, col7 = st.columns(2)
     with col6:
@@ -48,8 +48,8 @@ def main():
                 layers=[
                     pdk.Layer(
                         "ScatterplotLayer",
-                        data=[lat_l, lon_l],
-                        get_position=[lat_l, lon_l],
+                        data=[lon_l, lat_l],
+                        get_position=[lon_l, lat_l],
                         get_fill_color=[255, 140, 0, 50],
                         get_line_color=[0, 0, 0],
                         get_radius=(diameter * 1000) / 2
@@ -70,8 +70,8 @@ def main():
                 layers=[
                     pdk.Layer(
                         "ScatterplotLayer",
-                        data=[lat_r, lon_r],
-                        get_position=[lat_r, lon_r],
+                        data=[lon_r, lat_r],
+                        get_position=[lon_r, lat_r],
                         get_fill_color=[255, 140, 0, 50],
                         get_line_color=[0, 0, 0],
                         get_radius=(diameter * 1000) / 2
