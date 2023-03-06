@@ -41,8 +41,8 @@ def main():
             pdk.Deck(
                 map_style=map_style,
                 initial_view_state=pdk.ViewState(
-                    latitude=48.783333,
-                    longitude=9.183333,
+                    latitude=lat_l,
+                    longitude=lon_l,
                     zoom=zoom
                 ),
                 layers=[
@@ -63,8 +63,8 @@ def main():
             pdk.Deck(
                 map_style=map_style,
                 initial_view_state=pdk.ViewState(
-                    latitude=46.65581,
-                    longitude=32.6178,
+                    latitude=lat_r,
+                    longitude=lon_r,
                     zoom=zoom
                 ),
                 layers=[
